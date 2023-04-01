@@ -10,3 +10,29 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
+
+#!/bin/awk -f
+file_name= # 
+column_1_num_PKM="$1"
+column_6_HP="$6"
+column_7_ATK="$7"
+
+BEGIN {
+# How many lines
+    lines=0;
+    total=0;
+    
+}
+{
+    lines++;
+    total+=$1;
+}
+END {
+    print lines " lines read";
+    print "total is ", total;
+    if(lines > 0 ) {
+        print "total is ", total;
+    } else { 
+        print "average is 0;'
+    }
+} 
